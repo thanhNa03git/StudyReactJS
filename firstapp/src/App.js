@@ -1,5 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
+import Car from './Car';
+import Shape from './Shape';
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
         >
           Learn React - Hello world!
         </a>
+        <Car/>
+        <Shape/>
       </header>
     </div>
   );
