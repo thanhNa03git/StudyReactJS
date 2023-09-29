@@ -1,7 +1,8 @@
-import logo from './logo.svg';
-import './App.css';
-import Car from './Car';
-import Shape from './Shape';
+import logo from "./logo.svg";
+import "./App.css";
+import ParentComponent from './ClickMe';
+import Shape from "./Shape";
+import Car from "./Car"
 
 function App() {
   return (
@@ -19,8 +20,10 @@ function App() {
         >
           Learn React - Hello world!
         </a>
-        <Car/>
-        <Shape/>
+        <ParentComponent/>
+        <Car value="Ford"/>
+        <Shape color="red" value="hình vuông đỏ" />
+        <Shape color="yellow" value="hình tròn vàng" />
       </header>
     </div>
   );

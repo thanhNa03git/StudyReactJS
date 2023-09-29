@@ -1,9 +1,11 @@
-// function component
-function Car() {
+import React from "react";
+function Car(props) {
     return (
-        <div style={{color: 'red'}}>
-        <h2>Hello world, I am a Car!!</h2>
-        <p>Ví dụ về Function Component</p>
+
+        <div style={{color: 'blue'}}>
+        <h3>Ví dụ Props với functionComp, I am a {props.value}!</h3>
         </div>
     );
 }
+
+export default Car
