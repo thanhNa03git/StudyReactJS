@@ -8,8 +8,6 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <Car/>
-        <Shape color="red" value="hình vuông" nameColor="đỏ" />
         <Shape color="yellow" value="hình tròn" nameColor="vàng" />
       </header>
     </div>
