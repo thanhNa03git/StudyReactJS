@@ -7,6 +7,7 @@ import React from "react"
         4. componentDidMount()
     Phương thức render() là bắt buộc và sẽ luôn được gọi, 
     Các phương thức khác là tùy chọn và sẽ được gọi nếu muốn xác định chúng.
+    *Check devtool để debug và hiểu quy trình code chạy 
 */
 // class component
 class shape extends React.Component {
@@ -19,7 +20,7 @@ class shape extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            valueName: "hình vuông",
+            valueName: "hình vuông", //value ở this props thì là "hình tròn nhé"
             colorName: props.nameColor,
             color: props.color
         };
@@ -40,7 +41,14 @@ class shape extends React.Component {
      */
     render() {
         console.log('chạy đến render')
-        return <h3 style={{color:this.state.color}}>Ví dụ về Mounting, tôi là {this.state.valueName} và tôi có màu {this.state.colorName}</h3>
+        return (
+            <div>
+                <h1 style={{color: "blueviolet"}}>Giai đoạn Mounting</h1>
+                <h3 style={{color:this.state.color}}>
+                    Ví dụ về Mounting, tôi là {this.state.valueName} và tôi có màu {this.state.colorName}
+                </h3>
+            </div>
+        )
     }
     /*
     Phương thức componentDidMount() được call SAU khi render một phần tử HTML được hiển thị
