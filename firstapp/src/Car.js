@@ -1,48 +1,49 @@
 import React from "react";
 
-// Ví dụ về getSnapShotBeforeUpdate()
-class car extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-        brand: "Ford",
-        model: "Mustang",
-        color: "red",
-        year: 1964,
-        };
+function Car () {
+
+// Adding event
+    const run1 = () => {
+        alert("Xe bat dau chay!")
+        console.log("act: " +  this)
     }
 
-    componentDidMount() {
-        setTimeout(()=>{
-            this.setState({color: "green"})
-        }, 3000)
-        console.log("đếm")
+// Passing parament
+    const run2 = (mess) => {
+        alert(mess)
+        console.log("act: " + mess)
     }
 
-    getSnapshotBeforeUpdate(prevProps, prevState) {
-        document.getElementById("div1").innerHTML = "Trước khi Update, màu sắc đã là " +prevState.color;
-        console.log("value trước cập nhật")
+// Event Object
+    const act = (a,b) => {
+        alert(b.type);
+        console.log(a,b);
     }
-
-    componentDidUpdate() {
-        document.getElementById("div2").innerHTML = "Bản cập nhật màu sắc là "+this.state.color;
-        console.log("value đã cập nhật")
-    }
-
-    // changeColor = () => {
-    //     this.setState({ color: "blue" });
-    // };
-
-    render() {
-        console.log("render ")
-        return (
-        <div style={{backgroundColor: "none"}}>
-            <h1 style={{color: "blueviolet"}}>Giai đoạn Update</h1>
-            <h3>Màu tui thích là {this.state.color}</h3>
-            <div id="div1"></div>
-            <div id="div2"></div>
-        </div>
-        );
-    }
+    return(
+        <>
+            <div>
+                <h1 style={{color:"blueviolet"}}>VD1: Start with first Events</h1>
+                <h3>Click để xe bắt đầu chạy</h3>
+                <button onClick={run1} 
+                style={{backgroundColor:"yellow", cursor: "pointer"}}>
+                    Run now
+                </button>
+            </div>
+            <div>
+                <h1 style={{color:"blueviolet"}}>VD2: truyền đối số vào function </h1>
+                <h3>Click để xe bắt đầu chạy</h3>
+                <button onClick={() =>  run2("grrr grrr")} 
+                style={{backgroundColor:"yellow", cursor: "pointer"}}>
+                    Run now
+                </button>
+            </div>
+            <div>
+            <h1 style={{color:"blueviolet"}}>VD3: Check con trỏ chuột  </h1>
+            <h3>Click để kiểm tra</h3>
+            <button onClick={(event) => act("checked", event)}>Check</button>
+            </div>
+        </>
+    )
 }
-export default car;
+
+export default Car
